@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Leitura do dataset
-df = pd.read_csv('C:\\Users\\PC\\Desktop\\repositorio\\218.1_Gabriel_Projeto_final\\parte1_tratado.csv', sep=';')
+df = pd.read_csv('C:\\Users\\Youth_Space_38\\OneDrive\\Desktop\\projeto final - datascience 218.1\\parte1_tratado.csv', sep=';')
 
 # Padronizando nomes das colunas
 df.columns = df.columns.str.lower()
@@ -67,13 +67,14 @@ df.columns = df.columns.str.lower()
 # plt.show()
 
 #2 O valor do frete influencia a chance de problema?
-# plt.figure()
-# df.boxplot(column='freight_value', by='problema_entrega')
-# plt.title('Valor do frete por tipo de pedido')
-# plt.suptitle('')
-# plt.xlabel('Problema de Entrega (0 = Não, 1 = Sim)')
-# plt.ylabel('Valor do Frete')
-# plt.show()
+plt.figure()
+df.boxplot(column='freight_value', by='problema_entrega')
+plt.title('Valor do frete por tipo de pedido')
+plt.suptitle('')
+plt.xlabel('Problema de Entrega (0 = Não, 1 = Sim)')
+plt.ylabel('Valor do Frete')
+plt.show()
+
 
 #3 O número de parcelas influencia a chance de atraso?
 # plt.figure()
@@ -119,11 +120,11 @@ df.columns = df.columns.str.lower()
 # plt.show()
 
 #8 Correlação com "PROBLEMA"
-plt.figure()
-corr_problem = df.select_dtypes('number').corr()['problema_entrega']
-plt.imshow(corr_problem.values.reshape(-1, 1))
-plt.yticks(range(len(corr_problem.index)), corr_problem.index)
-plt.xticks([0], ['problema_entrega'])
-plt.title('Correlação com problema de entrega')
-plt.colorbar()
-plt.show()
+# plt.figure()
+# corr_problem = df.select_dtypes('number').corr()['problema_entrega']
+# plt.imshow(corr_problem.values.reshape(-1, 1))
+# plt.yticks(range(len(corr_problem.index)), corr_problem.index)
+# plt.xticks([0], ['problema_entrega'])
+# plt.title('Correlação com problema de entrega')
+# plt.colorbar()
+# plt.show()
